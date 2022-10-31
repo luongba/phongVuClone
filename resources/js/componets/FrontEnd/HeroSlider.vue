@@ -8,6 +8,10 @@
         :modules="modules"
         :loop="true"
         class="mySwiper relative"
+        :autoplay="{
+          delay: 2500,
+          disableOnInteraction: false,
+        }"
     >
         <swiper-slide v-for="slide in slides" :key="slide.id">
             <img :src="slide.image" alt="">
@@ -57,7 +61,7 @@ import "swiper/css/pagination";
 
 
 // import required modules
-import {Navigation, Pagination, Mousewheel, Keyboard} from "swiper";
+import {Navigation, Pagination, Mousewheel, Keyboard, Autoplay} from "swiper";
 
 export default {
     components: {
@@ -66,7 +70,7 @@ export default {
     },
     setup() {
         return {
-            modules: [Navigation, Pagination, Mousewheel, Keyboard],
+            modules: [Navigation, Pagination, Mousewheel, Keyboard,Autoplay],
         };
     },
     data() {
