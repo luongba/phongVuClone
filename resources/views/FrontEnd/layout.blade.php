@@ -11,7 +11,7 @@
     <link href="/css/app.css" rel="stylesheet">
 </head>
 <body id="app">
-<header-app>
+<header-app></header-app>
 @yield('content')
 <script src="{{ mix('js/app.js') }}"></script>
 </body>
