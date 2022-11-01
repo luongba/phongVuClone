@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
+    #app{
+        background: rgb(248, 248, 252);
+        font-family: Roboto, sans-serif;
+    }
     .flex-center {
         @apply flex items-center justify-center;
     }
