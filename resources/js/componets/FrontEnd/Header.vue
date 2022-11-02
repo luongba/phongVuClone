@@ -122,27 +122,24 @@
                 </div>
             </a>
             <div class="relative group">
-                <div class="flex items-center text-gray-500 cursor-pointer hover:main-color text-[13px] hidden lg:flex"
-                     v-else>
+                <div class="flex items-center text-gray-500 cursor-pointer hover:main-color text-[13px] hidden lg:flex">
                     <img
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSK1By-eOJ2eoWEaCdMrvVPV3Fn0uSxI8pZQ&usqp=CAU"
                         class="w-[36px] h-[36px] rounded-full" alt="">
                     <div class="flex flex-col ml-3">
-                        <p class="font-semibold">Xin chào</p>
-                        <p class="font-semibold">Lương Ba</p>
+                        <p class="font-semibold text-gray-600">Xin chào</p>
+                        <p class="font-semibold text-gray-600">Lương Ba</p>
                     </div>
                 </div>
                 <div
                     class="absolute w-[260px] bg-white absolute left-[50%] translate-x-[-50%] rounded-lg max-h-[500px] hidden group-hover:block
                      shadow-lg overflow-y-scroll">
-                    <div class="flex items-center border-b-1 px-4 py-2 cursor-pointer"
-
-                         v-else>
+                    <div class="flex items-center border-b-1 px-4 py-2 cursor-pointer">
                         <div class="w-[48px] h-[48px] p-2 mr-4 overflow-hidden border">
                             <img :src="notifies[0].image" alt="">
                         </div>
                         <div class="flex-1">
-                            <p class="font-bold text-[15px] text-gray-800">Lương Ba</p>
+                            <p class="font-bold text-[15px] text-gray-600">Lương Ba</p>
                             <p class="text-ellipsis overflow-hidden text-[13px] break-words font-semibold text-gray-600"
                                style="display: -webkit-box;
                                -webkit-line-clamp: 2;
@@ -202,7 +199,7 @@
                     {{ notifies.length }}
                 </div>
                 <div
-                    class="w-full md:absolute left-0 md:top-[138%] md:left-[inherit] fixed md:w-[400px] z-[1039] bg-white right-[0%] rounded-lg md:max-h-[500px]  hidden group-hover:block
+                    class="w-full md:absolute top-[60px] left-0 md:top-[138%] md:left-[inherit] fixed md:w-[400px] z-[1039] bg-white right-[0%] rounded-none lg:rounded-lg md:max-h-[500px]  hidden group-hover:block
                      shadow-lg overflow-y-scroll">
                     <a v-if="notifies.length < 1"
                        class="text-[13px] text-gray-400 hover:text-gray-600 font-semibold text-center block"
@@ -241,7 +238,7 @@
                     {{ carts.length }}
                 </div>
                 <div
-                    class="w-full fixed left-0 md:top-[138%] md:left-[inherit] md:absolute md:w-[400px] bg-white right-[0%] z-[1039] rounded-lg shadow-lg md:max-h-[500px] h-[400px] hidden group-hover:block
+                    class="w-full fixed top-[60px] left-0 md:top-[138%] md:left-[inherit] md:absolute md:w-[400px] bg-white right-[0%] z-[1039] rounded-none lg:rounded-lg shadow-lg md:max-h-[500px] h-[400px] hidden group-hover:block
                       overflow-y-scroll" :class="carts.length < 1 ? 'flex flex-col justify-center' : ''">
                     <div class="w-full max-h-[300px] border-b-2 px-2 border-dashed"
                          :class="carts.length < 1 ? '' : 'overflow-y-scroll'">

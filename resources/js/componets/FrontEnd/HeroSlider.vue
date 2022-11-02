@@ -17,37 +17,7 @@
             <img :src="slide.image" alt="">
         </swiper-slide>
     </swiper>
-    <div class="w-full mt-2 lg:mt-4 px-2">
-        <div class="w-full flex justify-center">
-            <ul class="grid grid-rows-2 grid-flow-col md:grid-rows-1 gap-2 lg:gap-4">
-                <li class="rounded-lg overflow-hidden hover:scale-[1.05] transition-all duration-100">
-                    <a href="">
-                        <img src="./images/banners/banner1.webp" alt="">
-                    </a>
 
-                </li>
-                <li class="rounded-lg overflow-hidden hover:scale-[1.05] transition-all duration-100">
-                    <a href="">
-                        <img src="./images/banners/banner2.webp" alt="">
-                    </a>
-
-                </li>
-                <li class="rounded-lg overflow-hidden hover:scale-[1.05] transition-all duration-100">
-                    <a href="">
-                        <img src="./images/banners/banner3.webp" alt="">
-                    </a>
-
-                </li>
-                <li class="rounded-lg overflow-hidden hover:scale-[1.05] transition-all duration-100">
-                    <a href="">
-                        <img src="./images/banners/banner4.webp" alt="">
-                    </a>
-
-                </li>
-
-            </ul>
-        </div>
-    </div>
 </template>
 <script>
 // Import Swiper Vue.js components

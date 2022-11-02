@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
 </head>
-<body id="app">
+<body id="app" style="">
 <header-app></header-app>
 @yield('content')
 <script src="{{ mix('js/app.js') }}"></script>
