@@ -13,6 +13,7 @@
 <body id="app" style="">
 <header-app></header-app>
 @yield('content')
+<footer-app></footer-app>
 <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

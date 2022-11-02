@@ -8,6 +8,8 @@ import ProductCategory from "./componets/FrontEnd/ProductCategory"
 import BannerList from "./componets/FrontEnd/BannerList"
 import BrandList from "./componets/FrontEnd/BrandList"
 import ProductList from "./componets/FrontEnd/ProductList"
+import Footer from "./componets/FrontEnd/Footer"
+
 import mdiVue from 'mdi-vue/v3'
 import * as mdijs from '@mdi/js'
 const app = createApp({})
@@ -19,6 +21,7 @@ app.component('ProductCategory', ProductCategory)
 app.component('BannerList', BannerList)
 app.component('BrandList', BrandList)
 app.component('ProductList', ProductList)
+app.component('FooterApp', Footer)
 
 
 
