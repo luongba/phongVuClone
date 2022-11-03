@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('FrontEnd.Trang-Chu.index');
 });
+Route::get('/Chi-Tiet-San-Pham', function () {
+    return view('FrontEnd.Chi-Tiet-San-Pham.index');
+});

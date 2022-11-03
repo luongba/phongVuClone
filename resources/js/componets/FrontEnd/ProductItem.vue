@@ -5,8 +5,8 @@
                  src="https://lh3.googleusercontent.com/ms2dvVvV-F1fCsnZOhLcFKWHiDxipdSKBhHPW4BrmASMFJB2AgfOico4EvjasPUfbCyhNmbQiTS4e1oIY9YDwIcJEmzc9Bro=w230-rw"
                  alt="">
             <div class="bg-price absolute bottom-0 left-0 rounded-md">
-                <p class="text-yellow-400 font-semibold text-[10px] lg:text-[11px] uppercase text-start">Tiết kiệm</p>
-                <p class="text-[12px] lg:text-[13px] font-bold text-white mt-1">2.000.000 đ</p>
+                <p class="text-yellow-400 font-semibold text-[8px] lg:text-[10px] uppercase text-start">Tiết kiệm</p>
+                <p class="text-[11px] lg:text-[12px] font-bold text-white mt-1">2.000.000 đ</p>
             </div>
         </div>
         <div class="flex flex-start flex-col">

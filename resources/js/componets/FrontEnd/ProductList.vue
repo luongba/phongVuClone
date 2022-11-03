@@ -24,6 +24,23 @@
             <product-item />
             <product-item />
         </div>
+        <ul class="flex justify-center mt-4">
+            <li class="rounded-md w-[2rem] h-[2rem] bg-white flex-center text-gray-800 font-semibold text-[13px] border mr-1 cursor-pointer">
+                <mdicon name="ChevronLeft" width="16" height="16"></mdicon>
+            </li>
+            <li class="rounded-md w-[2rem] h-[2rem] main-bg flex-center text-white font-semibold text-[13px] border mx-1 cursor-pointer">
+                1
+            </li>
+            <li class="rounded-md w-[2rem] h-[2rem] main-bg bg-white flex-center text-gray-800 font-semibold text-[13px] border mx-1 cursor-pointer">
+                2
+            </li>
+            <li class="rounded-md w-[2rem] h-[2rem] main-bg bg-white flex-center text-gray-800 font-semibold text-[13px] border mx-1 cursor-pointer">
+                3
+            </li>
+            <li class="rounded-md w-[2rem] h-[2rem] bg-white flex-center text-gray-800 font-semibold text-[13px] border ml-1 cursor-pointer">
+                <mdicon name="ChevronRight" width="16" height="16"></mdicon>
+            </li>
+        </ul>
     </div>
 </template>
 

@@ -3,7 +3,7 @@
         <div class="container mx-auto h-full items-center flex justify-between">
             <div class="xl:w-[100px] lg:w-0 "></div>
             <a :href="item.type =='link' ? item.link : `tel:${item.link}`"
-               class="flex flex-row text-white text-[13px] font-semibold"
+               class="flex flex-row items-center text-white text-[13px] font-semibold"
                v-for="(item, index) in navItems" :key="index">
                 <mdicon width="24" height="24" :name="item.icon"/>
                 <p class="ml-2">{{ item.text }}</p>
@@ -11,10 +11,12 @@
         </div>
 
     </div>
-    <div class="fixed top-[60px] left-0 right-0 w-full bg-white lg:hidden transition-all z-[1040] duration-100 visible"
+
+    <div class="fixed top-[60px] overflow left-0 right-0 bottom-0 z-[1040]" @click="showListCategory" v-if="showListCate"></div>
+    <div class="fixed top-[60px] left-0 right-0 w-full bg-white lg:hidden transition-all z-[1040] duration-100 visible bg-white"
          :class="{'invisible transition-all': !isActive}">
         <div class="w-full">
-            <div class="pt-1 px-6 md:px-12 pb-2" @click = "isDropDownMenu = !isDropDownMenu">
+            <div class="pt-1 px-6 md:px-12 pb-2" @click="isDropDownMenu = !isDropDownMenu">
                 <div class="flex items-center border-b-1 cursor-pointer">
                     <div class="w-[48px] h-[48px] p-2 mr-4 overflow-hidden border">
                         <img :src="notifies[0].image" alt="">
@@ -36,7 +38,8 @@
 
                 </div>
             </div>
-            <ul class="w-full md:px-12  max-h-0 overflow-hidden px-6 duration-200 ease-linear" :class="{'pt-2 px-6 md:px-12 pb-2 max-h-[9999px]  ease-linear  duration-300': isDropDownMenu}">
+            <ul class="w-full md:px-12  max-h-0 overflow-hidden px-6 duration-200 ease-linear"
+                :class="{'pt-2 px-6 md:px-12 pb-2 max-h-[9999px]  ease-linear  duration-300': isDropDownMenu}">
                 <li class=" hover:bg-gray-100">
                     <a href="#" class="flex text-gray-600 text-[13px] py-2">
                         <mdicon width="20" height="20" name="AccountCircleOutline"/>
@@ -71,7 +74,7 @@
             <div class="pt-3 px-6 md:px-12 pb-6 flex flex-center">
 
                 <form
-                    class="relative bg-[rgb(245,245,245)] relative w-full h-[41px] flex items-center pl-4 pr-[52px] rounded-lg border flex lg:hidden">
+                    class="relative bg-[rgb(245,245,245)] relative w-full h-[41px] flex items-center pl-4 pr-[52px] rounded-lg border flex lg:hidden flex-1">
                     <input class="bg-[transparent] outline-none w-full text-[13px]" type="text"
                            placeholder="Nhập từ khóa tìm kiếm">
                     <button
@@ -91,7 +94,7 @@
 
         </div>
     </div>
-    <div class="bg-white sticky top-0 left-0 right-0 z-[1040]">
+    <div class="bg-white sticky top-0 left-0 right-0 z-[1040] lg:drop-shadow-md">
         <div class="container mx-auto flex justify-between h-[60px] lg:h-[88px] items-center">
             <div @click="isActive = !isActive" :class="{'is-active': isActive}" class="menu-toggle lg:hidden">
                 <span></span>
@@ -101,9 +104,57 @@
             <div class="invisible ml-4 lg:hidden">
                 <mdicon width="24" height="24" name="Menu"/>
             </div>
-            <a href="#" class="w-auto h-[24px] md:h-[35px] flex-1 lg:flex-none">
+            <a href="#" class="w-auto h-[24px] md:h-[35px] flex-1 lg:flex-none lg:hidden">
                 <img class="w-full h-full" src="./logo/logo-full.svg" alt="">
             </a>
+            <a href="#" class="w-auto h-[24px] md:h-[35px] flex-1 hidden lg:block lg:flex-none" v-if="!isScroll">
+                <img class="w-full h-full" src="./logo/logo-full.svg" alt="">
+            </a>
+            <div v-else class="flex items-center hidden lg:flex">
+                <a href="#" class="w-auto h-[24px] md:h-[35px] flex-1 lg:flex-none mr-4">
+                    <img class="w-full h-full" src="./logo/logo.svg" alt="">
+                </a>
+                <div class="border text-gray-400 px-2 py-1 rounded-md cursor-pointer hover:bg-gray-100 flex relative"
+                     @click="showListCategory">
+                    <mdicon width="24" height="24" name="ViewList"/>
+                    <span class="ml-2">Danh mục sản phẩm</span>
+                    <div class="bg-white absolute top-[226%] rounded-md left-0 min-w-[220px]" v-if="showListCate">
+                        <ul class="p-2">
+                            <li class="text-gray-600 text-[13px] hover:bg-gray-100 p-2">
+                                <a href="#" class="flex items-center w-full h-full">
+                                    <mdicon width="16" height="16" name="Laptop"/>
+                                    <span class="ml-2 text-gray-800 font-semibold">Laptop</span>
+                                </a>
+
+                            </li>
+                            <li class="text-gray-600 text-[13px] hover:bg-gray-100 p-2">
+                                <a href="#" class="flex items-center w-full h-full">
+                                    <mdicon width="16" height="16" name="FoodAppleOutline"/>
+                                    <span class="ml-2 text-gray-800 font-semibold">Sản phẩm Apple</span>
+                                </a>
+
+                            </li>
+                            <li class="text-gray-600 text-[13px] hover:bg-gray-100 p-2">
+                                <a href="#" class="flex items-center w-full h-full">
+                                    <mdicon width="16" height="16" name="Stove"/>
+                                    <span class="ml-2 text-gray-800 font-semibold">Điện máy - Điện gia dụng</span>
+                                </a>
+
+                            </li>
+                            <li class="text-gray-600 text-[13px] hover:bg-gray-100 p-2">
+                                <a href="#" class="flex items-center w-full h-full">
+                                    <mdicon width="16" height="16" name="DesktopClassic"/>
+                                    <span class="ml-2 text-gray-800 font-semibold">PC - Màn hình máy tính</span>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+
             <form
                 class="relative bg-[rgb(245,245,245)] relative w-[518px] h-[41px] flex items-center pl-4 pr-[52px] rounded-lg border hidden lg:flex">
                 <input class="bg-[transparent] outline-none w-full text-[13px]" type="text"
@@ -192,96 +243,98 @@
                 <div class="group relative contentshow" @click="hiddenMenu()">
                     <div class="text-gray-500 cursor-pointer hover:main-color" :class="isNotify ? 'main-color' : ''"
                     >
-                    <mdicon width="24" height="24" name="BellOutline"/>
-                </div>
-                <div v-if="notifies.length > 0"
-                     class="absolute right-[-5px] top-[-5px] w-3 h-3 rounded-full bg-red-600 text-white text-[8px] text-center">
-                    {{ notifies.length }}
-                </div>
-                <div
-                    class="w-full md:absolute top-[60px] left-0 md:top-[138%] md:left-[inherit] fixed md:w-[400px] z-[1039] bg-white right-[0%] rounded-none lg:rounded-lg md:max-h-[500px]  hidden group-hover:block
-                     shadow-lg overflow-y-scroll">
-                    <a v-if="notifies.length < 1"
-                       class="text-[13px] text-gray-400 hover:text-gray-600 font-semibold text-center block"
-                       href="#">Xem
-                        tất cả thông báo</a>
-                    <div class="flex items-center border-b-1 px-4 py-2 cursor-pointer"
-                         :class="[noti.isChuaDoc ? 'bg-gray-100' : 'bg-white', noti.id == notifies.length ? '' : 'mb-4']"
-                         v-else v-for="(noti, index) in notifies"
-                         :key="index">
-                        <div class="w-[48px] h-[48px] md:w-[64px] md:h-[64px] border rounded-full p-2 mr-4 overflow-hidden">
-                            <img :src="noti.image" alt="">
-                        </div>
-                        <div class="flex-1">
-
-                            <p class="font-bold text-[13px]">{{ noti.title }}</p>
-                            <p class="text-ellipsis overflow-hidden text-[13px] break-words"
-                               style="display: -webkit-box;
-                               -webkit-line-clamp: 2;
-                               line-clamp: 2;
-                               -webkit-box-orient: vertical;">
-                                {{ noti.description }}
-                            </p>
-                            <p class="font-semibold text-gray-600 text-[13px] text-end">{{ noti.timeStamp }}</p>
-                        </div>
-
+                        <mdicon width="24" height="24" name="BellOutline"/>
                     </div>
-                </div>
-            </div>
-            <div class="relative group ml-6 contentshow" @click="hiddenMenu()">
-                <div class="flex items-center text-gray-500 cursor-pointer hover:main-color text-[13px]">
-                    <mdicon width="24" height="24" name="CartMinus"/>
-
-                </div>
-                <div v-if="carts.length > 0"
-                     class="absolute right-[-5px] top-[-5px] w-3 h-3 rounded-full bg-red-600 text-white text-[8px] text-center">
-                    {{ carts.length }}
-                </div>
-                <div
-                    class="w-full fixed top-[60px] left-0 md:top-[138%] md:left-[inherit] md:absolute md:w-[400px] bg-white right-[0%] z-[1039] rounded-none lg:rounded-lg shadow-lg md:max-h-[500px] h-[400px] hidden group-hover:block
-                      overflow-y-scroll" :class="carts.length < 1 ? 'flex flex-col justify-center' : ''">
-                    <div class="w-full max-h-[300px] border-b-2 px-2 border-dashed"
-                         :class="carts.length < 1 ? '' : 'overflow-y-scroll'">
-                        <img v-if="carts.length < 1"
-                             class="w-[186px] h-[186px] mx-auto"
-                             src="https://truonggiang.vn/wp-content/plugins/isures-buildpc-for-woocomerce/public/images/empty-chosen.jpg"/>
-                        <div class="flex items-center border-b-1 px-4 py-2 cursor-pointer hover:bg-gray-100"
-                             :class="[ cart.id == carts.length ? '' : 'mb-2']"
-                             v-else v-for="(cart, index) in carts"
+                    <div v-if="notifies.length > 0"
+                         class="absolute right-[-5px] top-[-5px] w-3 h-3 rounded-full bg-red-600 text-white text-[8px] text-center">
+                        {{ notifies.length }}
+                    </div>
+                    <div
+                        class="w-full md:absolute top-[60px] left-0 md:top-[138%] md:left-[inherit] fixed md:w-[400px] z-[1039] bg-white right-[0%] rounded-none lg:rounded-lg md:max-h-[500px]  hidden group-hover:block
+                     shadow-lg overflow-y-scroll">
+                        <a v-if="notifies.length < 1"
+                           class="text-[13px] text-gray-400 hover:text-gray-600 font-semibold text-center block"
+                           href="#">Xem
+                            tất cả thông báo</a>
+                        <div class="flex items-center border-b-1 px-4 py-2 cursor-pointer"
+                             :class="[noti.isChuaDoc ? 'bg-gray-100' : 'bg-white', noti.id == notifies.length ? '' : 'mb-4']"
+                             v-else v-for="(noti, index) in notifies"
                              :key="index">
-                            <div class=" w-[64px] h-[64px] md:w-[78px] md:h-[78px]  border p-2 mr-4 overflow-hidden">
-                                <img :src="cart.image" alt="">
+                            <div
+                                class="w-[48px] h-[48px] md:w-[64px] md:h-[64px] border rounded-full p-2 mr-4 overflow-hidden">
+                                <img :src="noti.image" alt="">
                             </div>
                             <div class="flex-1">
 
-                                <p class="font-bold text-[13px] text-gray-600">{{ cart.name }}</p>
-                                <p class="text-ellipsis overflow-hidden text-[12px] break-words text-gray-400 text-[13px] font-semibold"
+                                <p class="font-bold text-[13px]">{{ noti.title }}</p>
+                                <p class="text-ellipsis overflow-hidden text-[13px] break-words"
                                    style="display: -webkit-box;
                                -webkit-line-clamp: 2;
                                line-clamp: 2;
                                -webkit-box-orient: vertical;">
-                                    Số lượng: x{{ cart.amount }}
+                                    {{ noti.description }}
                                 </p>
-                                <p class="font-bold text-[13px] text-gray-600">{{ cart.price }} đồng</p>
+                                <p class="font-semibold text-gray-600 text-[13px] text-end">{{ noti.timeStamp }}</p>
                             </div>
 
                         </div>
                     </div>
+                </div>
+                <div class="relative group ml-6 contentshow" @click="hiddenMenu()">
+                    <div class="flex items-center text-gray-500 cursor-pointer hover:main-color text-[13px]">
+                        <mdicon width="24" height="24" name="CartMinus"/>
 
-                    <div class="absolute bottom-0 left-0 right-0 p-2">
-                        <div class="flex justify-between my-4" v-if="carts.length > 0">
-                            <p class="font-semiboldbold text-[15px]">Tổng tiền ({{ carts.length }}) sản phẩm</p>
-                            <p class="font-bold text-[15px]">{{ TongTien }} đồng</p>
-                        </div>
-                        <button-app title="Xem giỏ hàng"></button-app>
                     </div>
+                    <div v-if="carts.length > 0"
+                         class="absolute right-[-5px] top-[-5px] w-3 h-3 rounded-full bg-red-600 text-white text-[8px] text-center">
+                        {{ carts.length }}
+                    </div>
+                    <div
+                        class="w-full fixed top-[60px] left-0 md:top-[138%] md:left-[inherit] md:absolute md:w-[400px] bg-white right-[0%] z-[1039] rounded-none lg:rounded-lg shadow-lg md:max-h-[500px] h-[400px] hidden group-hover:block
+                      overflow-y-scroll" :class="carts.length < 1 ? 'flex flex-col justify-center' : ''">
+                        <div class="w-full max-h-[300px] border-b-2 px-2 border-dashed"
+                             :class="carts.length < 1 ? '' : 'overflow-y-scroll'">
+                            <img v-if="carts.length < 1"
+                                 class="w-[186px] h-[186px] mx-auto"
+                                 src="https://truonggiang.vn/wp-content/plugins/isures-buildpc-for-woocomerce/public/images/empty-chosen.jpg"/>
+                            <div class="flex items-center border-b-1 px-4 py-2 cursor-pointer hover:bg-gray-100"
+                                 :class="[ cart.id == carts.length ? '' : 'mb-2']"
+                                 v-else v-for="(cart, index) in carts"
+                                 :key="index">
+                                <div
+                                    class=" w-[64px] h-[64px] md:w-[78px] md:h-[78px]  border p-2 mr-4 overflow-hidden">
+                                    <img :src="cart.image" alt="">
+                                </div>
+                                <div class="flex-1">
+
+                                    <p class="font-bold text-[13px] text-gray-600">{{ cart.name }}</p>
+                                    <p class="text-ellipsis overflow-hidden text-[12px] break-words text-gray-400 text-[13px] font-semibold"
+                                       style="display: -webkit-box;
+                               -webkit-line-clamp: 2;
+                               line-clamp: 2;
+                               -webkit-box-orient: vertical;">
+                                        Số lượng: x{{ cart.amount }}
+                                    </p>
+                                    <p class="font-bold text-[13px] text-gray-600">{{ cart.price }} đồng</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="absolute bottom-0 left-0 right-0 p-2">
+                            <div class="flex justify-between my-4" v-if="carts.length > 0">
+                                <p class="font-semiboldbold text-[15px]">Tổng tiền ({{ carts.length }}) sản phẩm</p>
+                                <p class="font-bold text-[15px]">{{ TongTien }} đồng</p>
+                            </div>
+                            <button-app title="Xem giỏ hàng"></button-app>
+                        </div>
 
 
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+        </div>
     </div>
 </template>
 <script>
@@ -387,6 +440,8 @@ export default {
             ],
             isLogin: true,
             isDropDownMenu: false,
+            isScroll: false,
+            showListCate: false
 
         }
 
@@ -403,7 +458,21 @@ export default {
         hiddenMenu() {
             this.isActive = false;
         },
+        showListCategory() {
+            this.isActive = false;
+            this.showListCate = !this.showListCate;
+        }
 
+    },
+    mounted() {
+        window.addEventListener("scroll", () => {
+            if (document.body.scrollTo > 240 || document.documentElement.scrollTop > 240) {
+                this.isScroll = true;
+            } else {
+                this.isScroll = false;
+                this.showListCate = false;
+            }
+        })
     }
 }
 </script>

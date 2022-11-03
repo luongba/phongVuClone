@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto relative min-h-[380px] lg:min-h-[412px] overflow-hidden">
+    <div class="container mx-auto relative min-h-[356px] lg:min-h-[412px] overflow-hidden">
         <div class="flex justify-between h-[3.5rem] items-center px-2 relative z-[1] ">
             <p class="text-[18px] text-white
             font-bold">{{ name }}</p>
@@ -102,7 +102,7 @@ export default {
 <style scoped>
 .mySwiper {
     height: 100%;
-    padding: 1rem;
+    padding: 0 1rem 1rem 1rem;
     overflow: hidden;
 }
 </style>
