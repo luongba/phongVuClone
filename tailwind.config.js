@@ -21,7 +21,11 @@ module.exports = {
               xl: '1232px',
           },
       },
-    extend: {},
+    extend: {
+        colors: {
+            'main-color': '#1435C3',
+          },
+    },
   },
   plugins: [],
 }
