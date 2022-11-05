@@ -1,8 +1,8 @@
 <template>
-    <a href="#" class="bg-white h-full px-4 py-4 group cursor-pointer block relative">
+    <a href="#" class="bg-anime h-full px-4 py-4 group cursor-pointer block relative">
         <div class="flex flex-center relative">
             <img class="group-hover:scale-[1.04] ease-in duration-100"
-                 src="https://lh3.googleusercontent.com/ms2dvVvV-F1fCsnZOhLcFKWHiDxipdSKBhHPW4BrmASMFJB2AgfOico4EvjasPUfbCyhNmbQiTS4e1oIY9YDwIcJEmzc9Bro=w230-rw"
+                 src="../FrontEnd/images/screen.png"
                  alt="">
             <div class="bg-price absolute bottom-0 left-0 rounded-md">
                 <p class="text-yellow-400 font-semibold text-[8px] lg:text-[10px] uppercase text-start">Tiết kiệm</p>

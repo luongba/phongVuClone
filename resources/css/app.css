@@ -29,5 +29,10 @@
     .overflow {
         background-color: rgba(0,0,0,0.5);
     }
+    .bg-anime {
+        background: hsla(0, 0%, 100%, .375);
+        box-shadow: 0 0.75rem 2rem 0 #7272721a;
+        border: 1px solid rgba(41,41,41,.041);
+    }
 
 }

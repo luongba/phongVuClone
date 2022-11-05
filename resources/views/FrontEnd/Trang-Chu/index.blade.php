@@ -67,6 +67,9 @@
     <div class="mt-4">
         <brand-list :brands="{{  json_encode($brands) }}"/>
     </div>
+    <div class="w-full relative mt-4">
+
+    </div>
     <div class="mt-4">
         <product-list name="Laptop"/>
     </div>
