@@ -1,5 +1,5 @@
 <template>
-    <div class="absolute inset-0 z-[-2] ">
+    <div class="fixed inset-0 z-[-1] overflow-hidden">
         <div
             class="
                 top-[50%]

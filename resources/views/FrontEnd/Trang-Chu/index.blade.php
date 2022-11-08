@@ -43,6 +43,8 @@
             ],
         ];
     @endphp
+    {{-- <div class="bg-red-800 fixed inset-0 z-0[-1]"></div> --}}
+    <amime-tele></amime-tele>
     <div class="mt-4">
         <banner-list :banners="{{  json_encode($banners) }}"/>
     </div>

@@ -1,5 +1,5 @@
 <template >
-   <svg
+    <!-- <svg
         id="text"
         width="668"
         height="280"
@@ -27,9 +27,9 @@
                 <stop offset="1" stop-color="#FF00E5" stop-opacity="0" />
             </linearGradient>
         </defs>
-    </svg>
+    </svg> -->
     <div class="w-full grid grid-cols-7 gap-2 relative">
-        <animeCircelVue/>
+        <!-- <animeCircelVue/> -->
         <div class="bg-anime rounded-sm p-4 col-span-5">
             <div class="flex justify-between">
                 <div class="flex flex-col w-[40%] justify-center">
@@ -218,6 +218,20 @@
             </div>
         </div>
     </div>
+    <div class="w-full grid grid-cols-8 gap-4 bg-anime mt-4 p-4">
+        <div class="col-span-5">
+            <h3 class="text-[18px] font-[500] text-gray-800">Mô tả sản phẩm</h3>
+            <div class="mt-8 text-[15px]" v-html="content"></div>
+        </div>
+        <div class="col-span-3">
+            <h3 class="text-[18px] font-[500] text-gray-800">
+                Thông tin chi tiết
+            </h3>
+            <div class="mt-8">
+                
+            </div>
+        </div>
+    </div>
 </template>
 <script>
 import { translate } from "../animate/animate";
@@ -226,13 +240,114 @@ import logoanimateVue from "../logo-animate/logoanimate.vue";
 export default {
     components: {
         animeCircelVue,
-        logoanimateVue
+        logoanimateVue,
     },
     data() {
         return {
             mainImg: "./images/mouse-big.png",
             description:
                 '<p class="text-[14px] leading-[1.25rem] text-gray-800">- Tính năng theo dõi quang học nâng cao của Logitech</p> <p class="text-[14px] leading-[1.25rem] text-gray-800">- Phạm vi không dây 10 m</p> <p class="text-[14px] leading-[1.25rem] text-gray-800">- Tương thích: macOS 10.14 trở lên và Windows 10, 11 trở lên</p>',
+            content: `<h2>
+	<a href="http://phongvu.vn/laptop-scat.01-N001">Laptop</a>&nbsp;HP Pavilion 15-eg2056TU - 6K786PA sở hữu hiệu năng ổn định c&oacute; thể xử l&yacute; tốt c&aacute;c t&aacute;c vụ văn ph&ograve;ng cơ bản nhờ v&agrave;o chip Intel Core i5 được trang bị. Pavilion với vẻ ngo&agrave;i hiện đại, sang trọng c&ugrave;ng hiệu năng b&ecirc;n trong ổn định sẽ gi&uacute;p bạn ho&agrave;n th&agrave;nh tốt c&aacute;c nhu cầu l&agrave;m việc, học tập hoặc giải tr&iacute; h&agrave;ng ng&agrave;y.
+</h2>
+
+<p>
+	<img src="https://storage.googleapis.com/teko-gae.appspot.com/media/image/2022/10/3/20221003_e52bab55-d197-4252-9e16-62c25540a374.png">
+</p>
+
+<h3>
+	Thiết kế đơn giản, nhẹ nh&agrave;ng c&ugrave;ng m&agrave;n h&igrave;nh 15.6 inch Full HD sắc n&eacute;t
+</h3>
+
+<p>
+	HP Pavilion 15-eg2056TU sở hữu vẻ ngo&agrave;i đơn giản với&nbsp;<strong>t&ocirc;ng m&agrave;u v&agrave;ng</strong>&nbsp;l&agrave;m chủ đạo tạo cảm gi&aacute;c hiện đại, sang trọng khi đặt l&ecirc;n b&agrave;n l&agrave;m việc. Đồng thời laptop cũng c&oacute; cho m&igrave;nh k&iacute;ch thước vừa phải&nbsp;<strong>36.02 x 23.4 x 1.79cm</strong>&nbsp;với trọng lượng&nbsp;<strong>1.7kg&nbsp;</strong>gi&uacute;p bạn dễ d&agrave;ng mang theo trong balo hoặc x&aacute;ch tay b&ecirc;n m&igrave;nh.
+</p>
+
+<p>
+	<img alt="Laptop HP Pavilion 15-eg2056TU - 6K786PA | Thiết kế hiện đại" src="https://storage.googleapis.com/teko-gae.appspot.com/media/image/2022/10/3/20221003_eb1d2c68-c7a7-4daf-8552-4495fe3a1dd8.png">
+</p>
+
+<p>
+	Ngo&agrave;i việc sở hữu thiết kế sang trọng, laptop HP c&ograve;n c&oacute; m&agrave;n h&igrave;nh với k&iacute;ch thước&nbsp;<strong>15.6 inch</strong>&nbsp;với độ ph&acirc;n giải&nbsp;<strong>1920x1080px</strong>&nbsp;đem đến những khung h&igrave;nh với chất lượng cao, sắc n&eacute;t để người d&ugrave;ng c&oacute; được trải nghiệm tốt nhất. HP c&ograve;n hỗ trợ cho m&aacute;y chiếc&nbsp;<strong>webcam</strong>&nbsp;với chất lượng&nbsp;<strong>HD&nbsp;</strong>để bạn sử dụng v&agrave;o c&aacute;c cuộc gặp mặt trực tuyến hay học online.
+</p>
+
+<p>
+	<img src="https://storage.googleapis.com/teko-gae.appspot.com/media/image/2022/10/3/20221003_af786647-9f6d-4c7e-8a58-144d8e82c0c6.png">
+</p>
+
+<h3>
+	Hiệu năng xử l&yacute; ổn định, chip đồ họa hiện đại cho h&igrave;nh ảnh chất lượng cao
+</h3>
+
+<p>
+	Laptop HP Pavilion 15 được trang bị bộ vi xử l&yacute;&nbsp;<strong>Intel Core i5-1240P thế hệ thứ 12</strong>&nbsp;với tốc độ xung nhịp l&ecirc;n đến<strong>&nbsp;4.4GHz</strong>, bộ nhớ đệm&nbsp;<strong>12MB</strong>&nbsp;c&ugrave;ng cấu tr&uacute;c&nbsp;<strong>12 nh&acirc;n, 16 luồng</strong>&nbsp;đem đến tốc độ xử l&yacute; dữ liệu nhanh ch&oacute;ng v&agrave; mượt m&agrave; cho bạn khi xử l&yacute; c&aacute;c t&aacute;c vụ h&agrave;ng ng&agrave;y.
+</p>
+
+<p>
+	<img alt="Laptop HP Pavilion 15-eg2056TU - 6K786PA | Hiệu năng " src="https://storage.googleapis.com/teko-gae.appspot.com/media/image/2022/10/3/20221003_bcca8b34-1c14-4a27-86b2-46fdb464b816.png">
+</p>
+
+<p>
+	Laptop nh&agrave; HP sở hữu chip đồ họa t&iacute;ch hợp<strong>&nbsp;Intel Iris Xe Graphics&nbsp;</strong>với nhiều t&iacute;nh năng hiện đại, mang đến khả năng hiển thị với chất lượng cao, trang bị tr&iacute; tuệ nh&acirc;n tạo cho ph&eacute;p tạo c&aacute;c file dữ liệu chi tiết phức tạp c&ugrave;ng lượng điện năng ti&ecirc;u thụ thấp.
+</p>
+
+<h3>
+	Trang bị bộ nhớ RAM 8GB c&ugrave;ng ổ lưu trữ rộng lớn 512GB
+</h3>
+
+<p>
+	Laptop HP 15-eg2056TU - 6K786PA được trang bị bộ nhớ&nbsp;<strong>RAM 2x4GB</strong>&nbsp;với chuẩn&nbsp;<strong>DDR4&nbsp;</strong>c&ugrave;ng tốc độ bus<strong>&nbsp;3200MHz</strong>, gi&uacute;p m&aacute;y hoạt động đa nhiệm mượt m&agrave;, tr&aacute;nh c&aacute;c t&igrave;nh trạng giật lag thường xuy&ecirc;n tr&ecirc;n m&aacute;y. Ngo&agrave;i bộ nhớ&nbsp;<strong>8GB&nbsp;</strong>m&aacute;y c&ograve;n được hỗ trợ th&ecirc;m&nbsp;<strong>2 khe cắm</strong>&nbsp;phục vụ th&ecirc;m c&aacute;c nhu cầu n&acirc;ng cấp bộ nhớ<a href="https://phongvu.vn/ram-bo-nho-scat.02-N004"><strong>&nbsp;RAM</strong></a>&nbsp;của bạn.
+</p>
+
+<p>
+	<img alt="Laptop HP Pavilion 15-eg2056TU - 6K786PA | Bộ nhớ" src="https://storage.googleapis.com/teko-gae.appspot.com/media/image/2022/10/3/20221003_4ff40aeb-df41-4f13-9b29-28dfc7192377.png">
+</p>
+
+<p>
+	B&ecirc;n cạnh đ&oacute;, chiếc laptop n&agrave;y sở hữu ổ lưu trữ rộng lớn&nbsp;<strong>512GB SSD</strong>&nbsp;c&oacute; khả năng lưu dữ liệu về c&ocirc;ng việc, học tập thoải m&aacute;i cũng như tải được nhiều ứng dụng hơn. Ngo&agrave;i ra, c&ograve;n c&oacute;&nbsp;<strong>M.2 NVMe</strong>&nbsp;gi&uacute;p tốc độ khởi động m&aacute;y được tăng đ&aacute;ng kể.
+</p>
+
+<h3>
+	Hỗ trợ đầy đủ c&aacute;c cổng kết nối cũng như kết nối kh&ocirc;ng d&acirc;y phổ biến
+</h3>
+
+<p>
+	Laptop HP Pavilion 15 cũng được trang bị c&aacute;c cổng kết nối hiện đại như cổng<strong>&nbsp;HDMI&nbsp;</strong>để xuất dữ liệu h&igrave;nh ảnh, c&aacute;c cổng kết nối dữ liệu&nbsp;<strong>1 x USB Type C/ DisplayPort/ Power Delivery, 2 x USB 3.2&nbsp;</strong>gi&uacute;p hiệu suất truyền dữ liệu trở n&ecirc;n nhanh ch&oacute;ng. Kh&ocirc;ng những thế c&ograve;n được trang bị cổng lưu trữ<strong>&nbsp;M.2 NVMe</strong>&nbsp;nhằm tăng tối đa hiệu năng hoạt động.
+</p>
+
+<p>
+	<img alt="Laptop HP Pavilion 15-eg2056TU - 6K786PA  | Kết nối" src="https://storage.googleapis.com/teko-gae.appspot.com/media/image/2022/10/3/20221003_ca5fce9b-61bc-4292-8e22-0f16f42d21e5.png">
+</p>
+
+<p>
+	Ngo&agrave;i ra, m&aacute;y c&ograve;n c&oacute; c&aacute;c kết nối kh&ocirc;ng d&acirc;y như&nbsp;<strong>WiFi 802.11ax (Wifi 6)&nbsp;</strong>với đường truyền ổn định để tiện lợi cho nhu cầu sử dụng internet của người d&ugrave;ng.&nbsp;<strong>Bluetooth 5.2</strong>&nbsp;c&ograve;n gi&uacute;p kết nối kh&ocirc;ng d&acirc;y dễ d&agrave;ng với c&aacute;c thiết bị kh&ocirc;ng d&acirc;y như chuột, b&agrave;n ph&iacute;m hoặc tai nghe nhanh ch&oacute;ng.
+</p>
+
+<h3>
+	Sử dụng vi&ecirc;n pin với thời lượng l&acirc;u 3 cell 41Wh c&ugrave;ng b&agrave;n ph&iacute;m thiết kế Full size
+</h3>
+
+<p>
+	Pavilion 15 được trang bị pin&nbsp;<strong>3 cell 41Wh</strong>&nbsp;c&oacute; thể sử dụng trong thời gian d&agrave;i, gi&uacute;p bạn dễ d&agrave;ng đem ra ngo&agrave;i l&agrave;m việc hoặc học tập m&agrave; kh&ocirc;ng cần lo lắng về việc sạc pin li&ecirc;n tục. Bạn c&oacute; thể d&ugrave;ng m&aacute;y với dung lượng pin ổn định phục vụ c&aacute;c t&aacute;c vụ cơ bản trong c&ocirc;ng việc.
+</p>
+
+<p>
+	<img alt="Laptop HP Pavilion 15-eg2056TU - 6K786PA | Bàn phím" src="https://storage.googleapis.com/teko-gae.appspot.com/media/image/2022/10/3/20221003_8b19ebc5-cccb-4a28-803b-7dc92117a922.png">
+</p>
+
+<p>
+	B&ecirc;n cạnh đ&oacute;, việc trang bị cho laptop nh&agrave; HP b&agrave;n ph&iacute;m với&nbsp;<strong>k&iacute;ch thước full size</strong>&nbsp;sẽ gi&uacute;p người d&ugrave;ng tiện lợi trong việc g&otilde; ph&iacute;m. Ph&iacute;m số được thiết kế sẽ gi&uacute;p qu&aacute; tr&igrave;nh đ&aacute;nh số của bạn trở n&ecirc;n nhanh ch&oacute;ng v&agrave; độ nảy của c&aacute;c ph&iacute;m vừa phải cũng đem đến trải nghiệm thoải m&aacute;i.
+</p>
+
+<h3>
+	Mua Laptop HP Pavilion 15-eg2056TU - 6K786PA ch&iacute;nh h&atilde;ng tại Phong Vũ | Hỗ trợ bảo h&agrave;nh 1 năm
+</h3>
+
+<p>
+	Laptop HP Pavilion 15-eg2056TU sở hữu hiệu năng ổn định, xử l&yacute; tốt c&aacute;c t&aacute;c vụ văn ph&ograve;ng c&ugrave;ng vẻ ngo&agrave;i được thiết kế sang trọng chắc chắn sẽ l&agrave; trợ thủ đắc lực cho bạn trong c&ocirc;ng việc v&agrave; học tập. Bạn c&oacute; thể đặt h&agrave;ng tr&ecirc;n website hoặc đến c&aacute;c&nbsp;<a href="http://phongvu.vn/"><strong>showroom Phong Vũ</strong></a>&nbsp;gần nhất để nhận được c&aacute;c ưu đ&atilde;i giảm gi&aacute; hấp dẫn.
+</p>
+
+`,
         };
     },
     methods: {

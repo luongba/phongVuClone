@@ -1,6 +1,6 @@
 <template>
     <div class="w-full relative">
-        <anime-tele-vue></anime-tele-vue>
+      
         <div class="container mx-auto">
             <div
                 class="
